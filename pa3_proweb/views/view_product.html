@@ -1,0 +1,76 @@
+<section class="rounded-2xl bg-white p-6 shadow-lg md:p-8">
+    <div class="mb-6">
+        <p class="font-semibold uppercase tracking-widest text-blue-600">Catálogo</p>
+        <h2 class="mt-2 text-3xl font-bold text-slate-800">Nuestros productos</h2>
+        <p class="mt-3 text-slate-600">Productos obtenidos desde nuestros servicios PHP + MySQL. Usa el formulario para filtrarlos sin recargar la página.</p>
+    </div>
+    <form id="form-filtros" class="mb-8 grid gap-4 rounded-xl border border-slate-200 bg-slate-50 p-5 sm:grid-cols-2 lg:grid-cols-3" novalidate>
+        <div>
+            <label for="f-title" class="mb-1 block text-sm font-medium text-slate-700">Nombre</label>
+            <input id="f-title" name="title" type="text" maxlength="255" placeholder="Ej: Backpack"
+                   class="w-full rounded-lg border border-slate-300 px-3 py-2">
+        </div>
+        <div>
+            <label for="f-description" class="mb-1 block text-sm font-medium text-slate-700">Descripción contiene</label>
+            <input id="f-description" name="description" type="text" maxlength="255" placeholder="Ej: cotton"
+                   class="w-full rounded-lg border border-slate-300 px-3 py-2">
+        </div>
+        <div>
+            <label for="f-categoria" class="mb-1 block text-sm font-medium text-slate-700">Categoría</label>
+            <select id="f-categoria" name="categoria_id" class="w-full rounded-lg border border-slate-300 bg-white px-3 py-2">
+                <option value="">Todas</option>
+            </select>
+        </div>
+        <div>
+            <label for="f-precio-min" class="mb-1 block text-sm font-medium text-slate-700">Precio mínimo (S/)</label>
+            <input id="f-precio-min" name="precio_min" type="number" min="0" step="0.01"
+                   class="w-full rounded-lg border border-slate-300 px-3 py-2">
+        </div>
+        <div>
+            <label for="f-precio-max" class="mb-1 block text-sm font-medium text-slate-700">Precio máximo (S/)</label>
+            <input id="f-precio-max" name="precio_max" type="number" min="0" step="0.01"
+                   class="w-full rounded-lg border border-slate-300 px-3 py-2">
+        </div>
+        <div>
+            <label for="f-stock" class="mb-1 block text-sm font-medium text-slate-700">Stock mínimo</label>
+            <input id="f-stock" name="stock_min" type="number" min="0" step="1"
+                   class="w-full rounded-lg border border-slate-300 px-3 py-2">
+        </div>
+        <div class="flex items-end gap-3 sm:col-span-2 lg:col-span-3">
+            <button type="submit" class="rounded-lg bg-blue-600 px-5 py-2 font-semibold text-white hover:bg-blue-700">Filtrar</button>
+            <button type="button" id="btn-limpiar" class="rounded-lg bg-slate-200 px-5 py-2 font-semibold text-slate-700 hover:bg-slate-300">Limpiar</button>
+            <p id="filtros-mensaje" class="text-sm text-slate-600" aria-live="polite"></p>
+        </div>
+    </form>
+    <!-- REQ 3: Selector de productos por página -->
+<div class="mb-6 flex flex-wrap items-center justify-between gap-4">
+
+    <div class="flex items-center gap-2">
+        <label for="por-pagina" class="font-medium text-slate-700">
+            Mostrar:
+        </label>
+
+        <select id="por-pagina"
+                class="rounded-lg border border-slate-300 bg-white px-3 py-2">
+            <option value="5">5</option>
+            <option value="10" selected>10</option>
+            <option value="20">20</option>
+        </select>
+
+        <span class="text-slate-600">productos por página</span>
+    </div>
+
+    <p id="info-paginacion" class="text-sm text-slate-600"></p>
+
+</div>
+    <div id="products-container" class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+        <p class="text-slate-500">Cargando productos...</p>
+    </div>
+    <!-- REQ 3: Botones de paginación -->
+<div id="controles-paginacion"
+     class="mt-8 flex flex-wrap items-center justify-center gap-2">
+</div>
+    <section id="product-detail" class="mt-8 hidden rounded-xl border border-slate-200 bg-slate-50 p-6" aria-live="polite">
+        <h3 class="mb-4 text-xl font-bold text-slate-800">Detalle del producto</h3>
+    </section>
+</section>

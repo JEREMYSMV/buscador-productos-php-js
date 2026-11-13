@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Tienda Virtual</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-slate-100">
+
+    <header class="bg-slate-800 px-6 py-4 text-white">
+        <div class="mx-auto flex max-w-7xl items-center justify-between">
+
+            <h1 class="text-2xl font-bold">
+                Tienda Virtual
+            </h1>
+
+            <nav class="flex gap-3" aria-label="Menú principal">
+
+                <a href="#" id="menu-home"
+                   class="rounded-lg bg-slate-700 px-4 py-2 hover:bg-blue-600">
+                    Inicio
+                </a>
+
+                <a href="#" id="menu-product"
+                   class="rounded-lg bg-slate-700 px-4 py-2 hover:bg-blue-600">
+                    Productos
+                </a>
+
+            </nav>
+        </div>
+    </header>
+
+    <main id="div_content" class="mx-auto min-h-screen max-w-7xl p-6">
+        <!-- Aquí se inyectará el contenido mediante fetch() -->
+    </main>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
